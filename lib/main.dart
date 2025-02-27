@@ -18,10 +18,14 @@ class MainWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final Size screenSize = MediaQuery.of(context).size;
+    final double height = screenSize.height;
+    final double width = screenSize.width;
+
     return Scaffold(
       body: Container(
-        height: 400,
-        width: 400,
+        height: height,
+        width: width,
         color: Colors.amber,
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
