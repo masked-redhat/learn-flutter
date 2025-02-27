@@ -11,14 +11,11 @@ class MainApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        body: Text(
-          'Hello there',
-          style: TextStyle(
-            color: Colors.white,
-            fontSize: 34,
-            fontFamily: 'montserrat',
-            fontWeight: FontWeight.w200,
-            backgroundColor: Colors.orange,
+        body: Center(
+          child: TextButton(
+            onPressed: () => {print("Hello there"), print("Goa")},
+            onLongPress: () => {print("Longed")},
+            child: Text('gogo'),
           ),
         ),
       ),
