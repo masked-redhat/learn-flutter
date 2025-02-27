@@ -20,13 +20,9 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          'Helo',
-          style: TextStyle(
-            color: Colors.lightBlue,
-            fontSize: 25,
-            fontFamily: 'montserrat',
-          ),
+        child: Image(
+          image: AssetImage('assets/images/image1.jpg'),
+          height: 300,
         ),
       ),
     );
