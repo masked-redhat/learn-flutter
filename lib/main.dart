@@ -20,11 +20,11 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-        height: 200,
+        height: 400,
+        width: 400,
         color: Colors.amber,
-        child: Row(
+        child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          crossAxisAlignment: CrossAxisAlignment.end,
           children: <Widget>[
             // type of widgets, <Widget> is redundant if many types of widgets
             Text('hello', style: TextStyle(fontSize: 24)),
