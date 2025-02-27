@@ -12,10 +12,19 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         body: Center(
-          child: TextButton(
-            onPressed: () => {print("Hello there"), print("Goa")},
-            onLongPress: () => {print("Longed")},
-            child: Text('gogo'),
+          child: Column(
+            children: [
+              ElevatedButton(
+                onPressed: () => {print("Hello there"), print("Goa")},
+                onLongPress: () => {print("Longed")},
+                child: Text('gogo'),
+              ),
+              OutlinedButton(
+                onPressed: () => {print("Hello there2")},
+                onLongPress: () => {print("Longed2")},
+                child: Text('gogo2'),
+              ),
+            ],
           ),
         ),
       ),
