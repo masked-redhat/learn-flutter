@@ -9,22 +9,23 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Scaffold(
-        body: Center(
-          child: Column(
-            children: [
-              ElevatedButton(
-                onPressed: () => {print("Hello there"), print("Goa")},
-                onLongPress: () => {print("Longed")},
-                child: Text('gogo'),
-              ),
-              OutlinedButton(
-                onPressed: () => {print("Hello there2")},
-                onLongPress: () => {print("Longed2")},
-                child: Text('gogo2'),
-              ),
-            ],
+    return MaterialApp(home: MainWidget());
+  }
+}
+
+class MainWidget extends StatelessWidget {
+  const MainWidget({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: Text(
+          'Helo',
+          style: TextStyle(
+            color: Colors.lightBlue,
+            fontSize: 25,
+            fontFamily: 'montserrat',
           ),
         ),
       ),
