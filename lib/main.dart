@@ -13,11 +13,14 @@ class MainApp extends StatelessWidget {
       home: Scaffold(
         body: Center(
           child: Container(
-            width: 700,
-            height: 700,
-            color: Colors.amberAccent,
+            width: 200,
+            height: 100,
+            color: Colors.blueGrey,
             child: Center(
-              child: Text('Hello there', style: TextStyle(fontSize: 25)),
+              child: Text(
+                'This is center of container',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ),
         ),
