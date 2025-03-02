@@ -33,9 +33,12 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text(
-          "hello there",
-          style: mTextStyle().copyWith(color: Colors.deepOrange),
+        child: Card(
+          elevation: 3,
+          child: Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: Text("helo"),
+          ),
         ),
       ),
     );
