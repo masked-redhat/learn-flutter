@@ -24,24 +24,14 @@ class MainWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: Container(
-          width: 200,
-          height: 200,
-          decoration: BoxDecoration(
-            color: Colors.red,
-            // borderRadius: BorderRadius.all(Radius.circular(21)),
-            border: Border.all(width: 2, color: Colors.blueGrey),
-            boxShadow: [
-              BoxShadow(
-                blurRadius: 11,
-                spreadRadius: 2,
-                offset: Offset(20, 11),
-                color: Colors.amber,
-              ),
-            ],
-            shape: BoxShape.circle,
-          ),
+      body: Container(
+        margin: EdgeInsets.all(11),
+        decoration: BoxDecoration(
+          border: Border.all(width: 1, color: Colors.deepOrange),
+        ),
+        child: Padding(
+          padding: const EdgeInsets.only(top: 21, left: 32),
+          child: Text("Hello world", style: TextStyle(fontSize: 32)),
         ),
       ),
     );
