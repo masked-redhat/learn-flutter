@@ -18,36 +18,49 @@ class MainWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var arrNames = ["Raman", "Ramanujan", "Priya"];
+
     return Scaffold(
       body: Center(
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              SingleChildScrollView(
-                scrollDirection: Axis.horizontal,
-                child: Row(
-                  children: [
-                    Container(
-                      width: 200,
-                      height: 200,
-                      color: Colors.lightGreen,
-                    ),
-                    Container(
-                      width: 200,
-                      height: 200,
-                      color: Colors.deepOrange,
-                    ),
-                    Container(width: 200, height: 200, color: Colors.blue),
-                    Container(width: 200, height: 200, color: Colors.grey),
-                  ],
-                ),
-              ),
-              Container(height: 200, color: Colors.lightBlue),
-              Container(height: 200, color: Colors.amber),
-              Container(height: 200, color: Colors.black),
-              Container(height: 200, color: Colors.deepPurple),
-            ],
-          ),
+        //     child: ListView(
+        //       //   scrollDirection: Axis.vertical,
+        //       //   reverse: true,
+        //       children: [
+        //         Text(
+        //           "One",
+        //           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+        //         ),
+        //         Text(
+        //           "Two",
+        //           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+        //         ),
+        //         Text(
+        //           "Three",
+        //           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+        //         ),
+        //         Text(
+        //           "Four",
+        //           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+        //         ),
+        //         Text(
+        //           "Five",
+        //           style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+        //         ),
+        //       ],
+        //     ),
+
+        // child: ListView.builder(
+        child: ListView.separated(
+          itemBuilder: (context, index) {
+            return Text(
+              arrNames[index],
+              style: TextStyle(fontSize: 21, fontWeight: FontWeight.w500),
+            );
+          },
+          itemCount: arrNames.length,
+          separatorBuilder: (context, index) {
+            return Divider(height: 4, thickness: 4);
+          },
         ),
       ),
     );
