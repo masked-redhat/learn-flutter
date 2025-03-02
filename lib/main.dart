@@ -9,7 +9,7 @@ class MainApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(home: MainWidget());
+    return MaterialApp(home: MainWidget(), debugShowCheckedModeBanner: false);
   }
 }
 
@@ -20,11 +20,34 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: GestureDetector(
-          child: Container(width: 200, height: 200, color: Colors.amber),
-          onTap: () => print("On Tap"),
-          onLongPress: () => print("On Long press"),
-          onDoubleTap: () => print("double tap"),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    Container(
+                      width: 200,
+                      height: 200,
+                      color: Colors.lightGreen,
+                    ),
+                    Container(
+                      width: 200,
+                      height: 200,
+                      color: Colors.deepOrange,
+                    ),
+                    Container(width: 200, height: 200, color: Colors.blue),
+                    Container(width: 200, height: 200, color: Colors.grey),
+                  ],
+                ),
+              ),
+              Container(height: 200, color: Colors.lightBlue),
+              Container(height: 200, color: Colors.amber),
+              Container(height: 200, color: Colors.black),
+              Container(height: 200, color: Colors.deepPurple),
+            ],
+          ),
         ),
       ),
     );
