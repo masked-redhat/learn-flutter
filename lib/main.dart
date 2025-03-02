@@ -20,18 +20,11 @@ class MainWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: <Widget>[
-            // type of widgets, <Widget> is redundant if many types of widgets
-            GestureDetector(
-              onTap: () => print("Going home"),
-              child: Text('hello', style: TextStyle(fontSize: 24)),
-            ),
-            Text('hello2', style: TextStyle(fontSize: 27)),
-            Text('hello3', style: TextStyle(fontSize: 30)),
-            Text('hello4', style: TextStyle(fontSize: 33)),
-          ],
+        child: GestureDetector(
+          child: Container(width: 200, height: 200, color: Colors.amber),
+          onTap: () => print("On Tap"),
+          onLongPress: () => print("On Long press"),
+          onDoubleTap: () => print("double tap"),
         ),
       ),
     );
