@@ -1,6 +1,7 @@
 import 'package:app1/util/util.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'package:intl/intl.dart';
 
 void main() {
   runApp(const MainApp());
@@ -37,7 +38,7 @@ class MainWidget extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Container(
+            SizedBox(
               width: 200,
               child: TextField(
                 controller: fieldController,
@@ -54,6 +55,7 @@ class MainWidget extends StatelessWidget {
               onPressed: () => print(fieldController.text),
               child: Text("Clikc me"),
             ),
+            Text('${DateFormat('yQQQ').format(DateTime.now())}'),
           ],
         ),
       ),
