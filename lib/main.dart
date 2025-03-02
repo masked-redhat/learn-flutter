@@ -30,33 +30,50 @@ class MainApp extends StatelessWidget {
 
 class MainWidget extends StatelessWidget {
   const MainWidget({super.key});
+
   @override
   Widget build(BuildContext context) {
-    var fieldController = TextEditingController();
+    var colors = [
+      Colors.red,
+      Colors.amber,
+      Colors.blue,
+      Colors.lightGreen,
+      Colors.red,
+      Colors.amber,
+      Colors.lightBlue,
+      Colors.purple,
+    ];
+
     return Scaffold(
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            SizedBox(
-              width: 200,
-              child: TextField(
-                controller: fieldController,
-                decoration: InputDecoration(
-                  hintText: "Enter",
-                  border: OutlineInputBorder(
-                    borderRadius: BorderRadius.circular(21),
-                  ),
-                  suffixText: "Great",
-                ),
-              ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
+              maxCrossAxisExtent: 500,
             ),
-            ElevatedButton(
-              onPressed: () => print(fieldController.text),
-              child: Text("Clikc me"),
-            ),
-            Text('${DateFormat('yQQQ').format(DateTime.now())}'),
-          ],
+            itemBuilder: (context, index) {
+              return Container(color: colors[index]);
+            },
+            itemCount: 6,
+          ),
+          //   child: GridView.extent(
+          //     // crossAxisCount: 2,
+          //     maxCrossAxisExtent: 100,
+          //     mainAxisSpacing: 12,
+          //     crossAxisSpacing: 12,
+          //     children: [
+          //       Text('${colors.length}'),
+          //       Container(color: colors[0]),
+          //       Container(color: colors[1]),
+          //       Container(color: colors[2]),
+          //       Container(color: colors[3]),
+          //       Container(color: colors[4]),
+          //       Container(color: colors[5]),
+          //       Container(color: colors[6]),
+          //       Container(color: colors[7]),
+          //     ],
+          //   ),
         ),
       ),
     );
