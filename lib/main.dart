@@ -1,5 +1,6 @@
 import 'package:app1/util/util.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 void main() {
   runApp(const MainApp());
@@ -13,7 +14,7 @@ class MainApp extends StatelessWidget {
     return MaterialApp(
       title: 'Application 1',
       theme: ThemeData(
-        primarySwatch: Colors.blue,
+        primarySwatch: Colors.orange,
         fontFamily: 'Montserrat',
         textTheme: TextTheme(
           headlineSmall: TextStyle(fontSize: 21, fontWeight: FontWeight.bold),
@@ -28,17 +29,32 @@ class MainApp extends StatelessWidget {
 
 class MainWidget extends StatelessWidget {
   const MainWidget({super.key});
-
   @override
   Widget build(BuildContext context) {
+    var fieldController = TextEditingController();
     return Scaffold(
       body: Center(
-        child: Card(
-          elevation: 3,
-          child: Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text("helo"),
-          ),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Container(
+              width: 200,
+              child: TextField(
+                controller: fieldController,
+                decoration: InputDecoration(
+                  hintText: "Enter",
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(21),
+                  ),
+                  suffixText: "Great",
+                ),
+              ),
+            ),
+            ElevatedButton(
+              onPressed: () => print(fieldController.text),
+              child: Text("Clikc me"),
+            ),
+          ],
         ),
       ),
     );
