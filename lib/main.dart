@@ -28,52 +28,41 @@ class MainApp extends StatelessWidget {
   }
 }
 
-class MainWidget extends StatelessWidget {
+class MainWidget extends StatefulWidget {
   const MainWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
-    var colors = [
-      Colors.red,
-      Colors.amber,
-      Colors.blue,
-      Colors.lightGreen,
-      Colors.red,
-      Colors.amber,
-      Colors.lightBlue,
-      Colors.purple,
-    ];
+  State<MainWidget> createState() => _MainWidget();
+}
 
+class _MainWidget extends State<MainWidget> {
+  var _index = 0;
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Padding(
-          padding: const EdgeInsets.all(12),
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithMaxCrossAxisExtent(
-              maxCrossAxisExtent: 500,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _index += 1;
+                });
+              },
+              child: Text("Incement"),
             ),
-            itemBuilder: (context, index) {
-              return Container(color: colors[index]);
-            },
-            itemCount: 6,
-          ),
-          //   child: GridView.extent(
-          //     // crossAxisCount: 2,
-          //     maxCrossAxisExtent: 100,
-          //     mainAxisSpacing: 12,
-          //     crossAxisSpacing: 12,
-          //     children: [
-          //       Text('${colors.length}'),
-          //       Container(color: colors[0]),
-          //       Container(color: colors[1]),
-          //       Container(color: colors[2]),
-          //       Container(color: colors[3]),
-          //       Container(color: colors[4]),
-          //       Container(color: colors[5]),
-          //       Container(color: colors[6]),
-          //       Container(color: colors[7]),
-          //     ],
-          //   ),
+            Text('Current Value: ${_index}'),
+            ElevatedButton(
+              onPressed: () {
+                setState(() {
+                  _index -= 1;
+                });
+              },
+              child: Text("Decrement"),
+            ),
+          ],
         ),
       ),
     );
