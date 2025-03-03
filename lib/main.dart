@@ -39,11 +39,17 @@ class _MainWidget extends State<MainWidget> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(
-        child: FaIcon(
-          FontAwesomeIcons.amazon,
-          size: 100,
-          color: Colors.blueAccent.shade400,
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        child: Stack(
+          children: [
+            Positioned(
+              right: 34,
+              bottom: 34,
+              child: Container(width: 100, height: 100, color: Colors.amber),
+            ),
+          ],
         ),
       ),
     );
