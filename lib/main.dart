@@ -36,7 +36,7 @@ class MainWidget extends StatefulWidget {
 }
 
 class _MainWidget extends State<MainWidget> {
-  var _index = 0;
+  dynamic _index = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -45,22 +45,48 @@ class _MainWidget extends State<MainWidget> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _index += 1;
-                });
-              },
-              child: Text("Incement"),
+            Container(
+              width: 100,
+              height: 100,
+              child: SizedBox.expand(
+                // expands to parent size
+                // .shrink is for minimum size of the parent(for some widgets, we can set minimum width/height)
+                child: ElevatedButton(
+                  onPressed: () {
+                    setState(() {
+                      _index += 1;
+                    });
+                  },
+                  onLongPress: () {
+                    setState(() {
+                      _index = double.infinity;
+                    });
+                  },
+                  child: Text("Incement"),
+                ),
+              ),
             ),
+            SizedBox(height: 15),
             Text('Current Value: ${_index}'),
-            ElevatedButton(
-              onPressed: () {
-                setState(() {
-                  _index -= 1;
-                });
-              },
-              child: Text("Decrement"),
+            SizedBox(height: 40),
+            SizedBox.square(
+              // if you just want the width/height property, and not decoration like container
+              //   height: 150,
+              //   width: 150,
+              dimension: 200,
+              child: ElevatedButton(
+                onPressed: () {
+                  setState(() {
+                    _index -= 1;
+                  });
+                },
+                onLongPress: () {
+                  setState(() {
+                    _index = 0;
+                  });
+                },
+                child: Text("Decrement"),
+              ),
             ),
           ],
         ),
